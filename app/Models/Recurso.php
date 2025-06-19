@@ -4,15 +4,19 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Model;
-class Recurso extends Model {
-     protected $fillable = [
+class Recurso extends Model
+{
+    protected $fillable = [
         'nombre',
         'descripcion',
         'capacidad',
         'precio',
-        'estado',    // <- aquí
+        'estado', 
+        'Localidad',
+        'Reglas',   // <- aquí
     ];
-    public function reservas() {
+    public function reservas()
+    {
         return $this->hasMany(Reserva::class);
     }
 }

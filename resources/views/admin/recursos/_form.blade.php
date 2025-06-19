@@ -19,6 +19,20 @@
             rows="3">{{ old('descripcion',$recurso->descripcion ?? '') }}</textarea>
   @error('descripcion')<div class="invalid-feedback">{{ $message }}</div>@enderror
 </div>
+<div class="mb-3">
+  <label class="form-label">Ciudad</label>
+  <textarea name="localidad"
+            class="form-control @error('descripcion') is-invalid @enderror"
+            rows="3">{{ old('localidad',$recurso->ciudad ?? '') }}</textarea>
+  @error('localidad')<div class="invalid-feedback">{{ $message }}</div>@enderror
+</div>
+<div class="mb-3">
+  <label class="form-label">Reglas</label>
+  <textarea name="reglas"
+            class="form-control @error('reglas') is-invalid @enderror"
+            rows="3">{{ old('reglas',$recurso->reglas ?? '') }}</textarea>
+  @error('reglas')<div class="invalid-feedback">{{ $message }}</div>@enderror
+</div>
 
 <div class="row">
   <div class="col-md-6 mb-3">

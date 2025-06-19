@@ -11,7 +11,7 @@ use App\Models\Recurso;
 class reservationMade extends Notification
 {
     use Queueable;
-    
+
     /**
      * Create a new notification instance.
      */
@@ -38,11 +38,11 @@ class reservationMade extends Notification
     {
         return (new MailMessage)
             ->subject('Has hecho una reserva')
-            ->greeting('Hola '. $this->user->name)
-            ->line('Confirmamos que has hecho una reserva en: '. $this->recurso->nombre)
+            ->greeting('Hola ' . $this->user->name)
+            ->line('Confirmamos que has hecho una reserva en: ' . $this->recurso->nombre)
             ->action('Visitar sus reservas', url('/dashboard'));
     }
-    
+
 
     /**
      * Get the array representation of the notification.

@@ -64,11 +64,12 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
-    public function reservas() {
+    public function reservas()
+    {
         return $this->hasMany(Reserva::class);
     }
-    
-    
+
+
     public function isAdmin(): bool
     {
         return $this->role === 'admin';

@@ -29,7 +29,14 @@
         <input type="number" name="price" id="precio" class="form-control" placeholder="Ej. 100.00">
       </div>
     </div>
-
+      <div class="mb-3">
+      <label for="localidad" class="form-label">Localidad del recurso</label>
+      <textarea name="localidad" id="localidad" class="form-control" rows="3" placeholder="Ingrese la Localidad"></textarea>
+    </div>
+      <div class="mb-3">
+      <label for="Reglas" class="form-label">Reglas del recurso</label>
+      <textarea name="reglas" id="reglas" class="form-control" rows="3" placeholder="Ingrese las reglas del recurso"></textarea>
+    </div>
     <div class="d-flex justify-content-end">
       <button type="submit" class="btn btn-primary me-2">Guardar</button>
       <a href="/" class="btn btn-outline-secondary">Cancelar</a>

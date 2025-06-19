@@ -16,15 +16,15 @@ Route::middleware([AdminMiddleware::class, 'auth'])->group(function () {
     Route::get('/admin/edit/{id}', [App\Http\Controllers\AdminController::class, 'edit']);
     Route::put('/admin/update/{id}', [App\Http\Controllers\AdminController::class, 'update']);
 });
-Route::get('/', [ReservasController::class , 'index']);
+Route::get('/', [ReservasController::class, 'index']);
 
-Route::get('/recursos', [ReservasController::class , 'recursos']);
-
-
-Route::get('/dashboard', [ReservasController::class , 'dashboard'])->middleware('auth');
-
-Route::post('/recursos/reservas/{id}', [ReservasController::class , 'reservar'])->middleware('auth');
-
-Route::delete('/recursos/cancelar/{id}', [ReservasController::class , 'cancelar'])->middleware('auth');
+Route::get('/recursos', [ReservasController::class, 'recursos']);
 
 
+Route::get('/dashboard', [ReservasController::class, 'dashboard'])->middleware('auth');
+
+Route::post('/recursos/reservas/{id}', [ReservasController::class, 'reservar'])->middleware('auth');
+
+Route::delete('/recursos/cancelar/{id}', [ReservasController::class, 'cancelar'])->middleware('auth');
+
+Route::get('/recursos/more/{id}', [ReservasController::class, 'more']);

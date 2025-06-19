@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Mis reservas')
+@section('title', '{{ $recurso->nombre }}')
 
 
 @section('content')
@@ -8,11 +8,11 @@
 
     
 <section class="recursos">
-    <h2 class="h2 fw-bold text-center mb-4">Sus reservas</h2>
     <div class="container-recursos">
-       @if(count($recursos)!= 0)
-        @foreach ($recursos as $recurso)
-              <div class="col-10">
+
+         
+            @if($recurso->estado =="No reservado")
+                     <div class="col-10">
                 <div class="card h-100 shadow-sm">
                    <div class="row g-0">
                         <div class="col-12 col-md-6 col-lg-4">
@@ -33,11 +33,10 @@
                                 </div>
                         
                                <div class="d-flex justify-content-between mt-auto">
-                                     <form action="/recursos/cancelar/{{ $recurso->id }}" method="POST">
+                                    <form action="/recursos/reservas/{{ $recurso->id }}" method="POST">
                                         @csrf
-                                        @method('DELETE')
-                                        <a href="#" class="btn btn-primary mt-auto" onclick="event.preventDefault(); this.closest('form').submit();">Cancelar reserva
-                                        </a>
+                                        <a href="#" class="btn btn-primary mt-auto" onclick="event.preventDefault(); this.closest('form').submit();">Reservar
+                                        </a> 
                                     </form>
                                     <a href="/" class="btn btn-secondary mt-auto">Volver</a>  
                                </div>
@@ -47,10 +46,14 @@
                    </div>
                 </div>
          </div>
-        @endforeach
-    @else
-        <h1>No tienes ninguna reserva hecha.  <a href="/recursos">Hacer una reserva</a> </h1>
-       @endif     
+                @else
+                    <h1>has reservado el recurso <a href="/dashboard">Ver reservas</a> </h1>
+            @endif
+
+      
+        
+     
+            
     </div>
 </section>
 
@@ -59,5 +62,3 @@
 
 
 @endsection
-
- 

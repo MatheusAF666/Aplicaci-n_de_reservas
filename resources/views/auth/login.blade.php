@@ -12,6 +12,7 @@
             </div>
         @endsession
 
+            <h1>hola</h1>
         <form method="POST" action="{{ route('login') }}">
             @csrf
 
